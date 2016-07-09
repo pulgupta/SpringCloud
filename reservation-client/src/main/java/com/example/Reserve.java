@@ -4,6 +4,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,10 @@ public class Reserve {
 	@Autowired
 	DiscoveryClient ds;
 	
+	public String callReservationfallback() {
+		return "Sorry!! reservation service is not available";
+	}
+	@HystrixCommand(fallbackMethod="callReservationfallback")
 	@RequestMapping("/reservation/caller")
 	public String callReservation() {
 		List<ServiceInstance> instances= this.ds.getInstances("reservation");
