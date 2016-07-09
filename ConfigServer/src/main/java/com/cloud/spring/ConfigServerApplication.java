@@ -9,6 +9,7 @@ import org.springframework.cloud.config.server.EnableConfigServer;
  * @author pulgupta
  *
  */
+
 @SpringBootApplication
 @EnableConfigServer
 public class ConfigServerApplication {
