@@ -1,0 +1,15 @@
+spring:  
+  application:
+    name: reservation
+  cloud:
+    config:
+      uri: http://localhost:8888
+      profile: dev
+server:
+  port: 8890
+  
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8889/eureka
+  
