@@ -2,7 +2,7 @@ Spring Cloud Patters
 ==================
 
   - [Usage](#usage)
-  - [Features] (#Features)
+  - [Features] (#features)
   - [Missing features?](#missing-features)
   - [License](#license)
 
