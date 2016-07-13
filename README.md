@@ -23,19 +23,24 @@ Because this is the future. These patterns will one day become the de facto stan
 	Just download all the patterns and use the ones which you want to implement.
 	
 ## Features
-  The projects have samples implemented for the below patterns
-    # Centralized Configuration
-    # Service Registory
-    # Service Discovery
-    # Circuit Breaker
-    # Proxy Server
-    # Hystrix Dashboard
+The projects have samples implemented for the below patterns
+# Centralized Configuration
+# Service Registory
+# Service Discovery
+# Circuit Breaker
+# Proxy Server
+# Hystrix Dashboard
 
 **Centralized Configuration** or config server as it is known help us to keep all our confguration at a central place. All our systems and services will use this server to read the configurations.
+
 **Service Registry** is used to register a service as it comes up.
+
 **Service Discovery** is used by services which are dependent on other services but are not sure where to locate them.
+
 **Circuit Breaker** is used to break the interdependency of one service on another in case the services are not available. The breaker will know that a service is now available and will redirect the calls to a fall back endpoint. 
+
 **Proxy server** helps us in coming up with a API gateway pattern in which the clients can call all the services using a single end point.
+
 **Hystrix Dashboard** helps us in monitoring the health of services and other important metrices.
     
 ## Missing features
