@@ -1,0 +1,26 @@
+zuul:
+  routes:
+    reservation-service:
+        path: /reservation/**
+        serviceId: reservation
+        stripPrefix: false
+    reservation-client-service:
+        path: /reservation-client/**
+        serviceId: reservation-client
+        stripPrefix: false
+        
+        
+spring:  
+  application:
+    name: proxy-server
+  cloud:
+    config:
+      uri: http://localhost:8888
+server:
+  port: 8893
+  
+  
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8889/eureka

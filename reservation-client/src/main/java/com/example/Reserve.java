@@ -1,17 +1,16 @@
 package com.example;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
-import org.springframework.http.ResponseEntity;
-import org.springframework.cloud.client.ServiceInstance;
 
 @RestController
 public class Reserve {
@@ -19,16 +18,34 @@ public class Reserve {
 	@Autowired
 	DiscoveryClient ds;
 	
+	//Broken
+	@Autowired
+	RestTemplate restTemplate;
+	
 	public String callReservationfallback() {
+		System.out.println("Sorry!! reservation service is not available");
 		return "Sorry!! reservation service is not available";
 	}
+	
 	@HystrixCommand(fallbackMethod="callReservationfallback")
-	@RequestMapping("/reservation/caller")
+	@RequestMapping("/reservation-client/caller")
 	public String callReservation() {
+		System.out.println("in old");
 		List<ServiceInstance> instances= this.ds.getInstances("reservation");
 		RestTemplate rt = new RestTemplate();
-		ResponseEntity<String> re = rt.getForEntity(instances.get(0).getUri()+"/greeting", String.class );
-		System.out.println(re.getBody());
+		ResponseEntity<String> re = rt.getForEntity(instances.get(0).getUri()+"/reservation/greeting", String.class );
+		System.out.println("old " + re.getBody());
 		return "From client and not direct " + re.getBody();
 	}
+	/*
+	 * Not working and even circuit breaker not behaving properly
+	 */
+	@HystrixCommand(fallbackMethod="callReservationfallback")
+	@RequestMapping("/reservation-client/caller/new")
+	public String callReservationNewWay() {
+		System.out.println("in new");
+		ResponseEntity<String> re = restTemplate.getForEntity("http://reservation/reservation/greeting", String.class );
+		return "From client and not direct new " + re.getBody();
+	}
+	
 }

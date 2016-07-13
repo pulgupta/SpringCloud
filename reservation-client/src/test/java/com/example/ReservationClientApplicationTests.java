@@ -19,7 +19,11 @@ public class ReservationClientApplicationTests {
 	
 	@Test
 	public void reserveCallSuccessTest() {
-		assertEquals(rs.callReservation(), "From client and not direct Hello \"Reservation-Pulkit\""); 
+		assertEquals(rs.callReservation(), "From client and not direct Hello \"Reservation-UPDATED-Pulkit\""); 
+	}
+	@Test
+	public void reserveNewCallSuccessTest() {
+		assertEquals(rs.callReservationNewWay(), "From client and not direct new Hello \"Reservation-UPDATED-Pulkit\""); 
 	}
 
 }

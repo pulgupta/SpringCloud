@@ -12,7 +12,7 @@ public class HelloWorld {
 	@Value("${message.greeting}")
 	String name="Gargi";
 	
-	@RequestMapping("/greeting")
+	@RequestMapping("/reservation/greeting")
 	public String helloWorld() {
 		return "Hello " + name;
 	}
