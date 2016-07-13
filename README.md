@@ -3,11 +3,11 @@ Spring Cloud Patterns
 
   - [Usage](#usage)
   - [Features](#features)
-  - [Missing features?](#missing-features)
+  - [Missing features](#missing-features)
   - [License](#license)
 
 
-### Spring cloud features and Patterns
+## Spring cloud features and Patterns
 
 **Cloud Patterns** - Cloud seems an ovious choice for projects these days. However what really important is to really understand the needs of a particular project and then implement the cloud correctly.
 
@@ -20,7 +20,7 @@ These patterns though sometimes may feel over the top but really helps an orgina
 Because this is the future. These patterns will one day become the de facto standard for an enterprise of any size or type. These patterns have proved successful for major technology players and so we can't just ignore them.
 
 ## Usage
-	Just download all the patterns and use the ones which you want to implement.
+Just download all the patterns and use the ones which you want to implement.
 	
 ## Features
 The projects have samples implemented for the below patterns
