@@ -24,12 +24,12 @@ Because this is the future. These patterns will one day become the de facto stan
 	
 ## Features
 The projects have samples implemented for the below patterns
-#### Centralized Configuration
-#### Service Registory
-#### Service Discovery
-#### Circuit Breaker
-#### Proxy Server
-#### Hystrix Dashboard
+#### 1. Centralized Configuration
+#### 2. Service Registory
+#### 3. Service Discovery
+#### 4. Circuit Breaker
+#### 5. Proxy Server
+#### 6. Hystrix Dashboard
 
 **Centralized Configuration** or config server as it is known help us to keep all our confguration at a central place. All our systems and services will use this server to read the configurations.
 
