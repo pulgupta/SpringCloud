@@ -7,7 +7,12 @@ spring:
       profile: dev
 server:
   port: 8890
+
   
+endpoints:
+  restart:
+    enabled: true
+
 eureka:
   client:
     serviceUrl:
