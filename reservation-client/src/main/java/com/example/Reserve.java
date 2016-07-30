@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,13 +13,15 @@ import org.springframework.web.client.RestTemplate;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
+
 @RestController
+
 public class Reserve {
 
 	@Autowired
 	DiscoveryClient ds;
 	
-	//Broken
+	//A REST TEMPLATE bean is no longer created via auto configuration
 	@Autowired
 	RestTemplate restTemplate;
 	
@@ -38,7 +41,9 @@ public class Reserve {
 		return "From client and not direct " + re.getBody();
 	}
 	/*
-	 * Not working and even circuit breaker not behaving properly
+	 * Working perfectly. In new version we will not get the default RT.
+	 * Create new and then add loadBalanced annotation to use ribbon load
+	 * balancing capabilities
 	 */
 	@HystrixCommand(fallbackMethod="callReservationfallback")
 	@RequestMapping("/reservation-client/caller/new")
