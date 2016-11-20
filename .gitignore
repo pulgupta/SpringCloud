@@ -9,6 +9,8 @@
 .settings
 .classpath
 .metadata
+.recommenders
+
 # NetBeans #
 ############
 nbactions.xml
