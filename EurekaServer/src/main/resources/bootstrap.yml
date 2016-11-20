@@ -11,6 +11,8 @@ eureka:
   client:
     register-with-eureka: false
     fetchRegistry: false
+    service-url:
+      defaultZone: http://localhost:8889/eureka/
     
 logging:
   level:
