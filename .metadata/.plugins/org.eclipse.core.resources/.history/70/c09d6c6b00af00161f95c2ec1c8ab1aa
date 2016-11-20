@@ -1,0 +1,12 @@
+package com.example.threads;
+
+import java.util.concurrent.Callable;
+
+public class ParallelCalls implements Callable<String>{
+
+	@Override
+	public String call() throws Exception {
+		return null;
+	}
+
+}

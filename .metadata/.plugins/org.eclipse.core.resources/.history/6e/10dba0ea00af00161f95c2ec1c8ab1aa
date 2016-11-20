@@ -1,0 +1,20 @@
+package com.example.threads;
+
+import java.util.concurrent.Callable;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.RestTemplate;
+
+public class ParallelCalls implements Callable<String>{
+
+	@Autowired
+	RestTemplate restTemplate;
+	
+	@Override
+	public String call() throws Exception {
+		ResponseEntity<String> re = restTemplate.getForEntity("http://reservation/reservation/greeting", String.class );
+		return re.getBody();
+	}
+
+}

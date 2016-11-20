@@ -1,0 +1,43 @@
+package com.example;
+
+import java.util.List;
+import java.util.concurrent.Callable;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestTemplate;
+
+@Component
+public class ParallelCalls implements Callable<String>{
+
+	Logger logger = LoggerFactory.getLogger(ParallelCalls.class);
+	String dummyData;
+	RestTemplate rt;
+	
+	@Autowired
+	RestTemplate restTemplate;
+	
+	//This is only to allow spring to create a bean for this class
+	public ParallelCalls() {}
+
+	public ParallelCalls(String data, RestTemplate rt) {
+		//This data is just for dummy purpose in case we have to send some parameters to the service.
+		this.dummyData = data;
+		this.rt = rt;
+	}
+
+	@Override
+	public String call() {
+		//logger.info("Checking that rest template is null or not " + restTemplate.toString());
+		logger.info("Calling backend service in a new call " + this.dummyData);
+		List<ServiceInstance> instances= this.ds.getInstances("reservation");
+		ResponseEntity<String> re = rt.getForEntity("http://reservation/reservation/greeting", String.class );
+		logger.info("Output of the service is " + re.getBody());
+		return re.getBody();
+	}
+
+}

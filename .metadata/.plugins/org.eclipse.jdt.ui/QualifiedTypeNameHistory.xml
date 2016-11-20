@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker"/>
+<fullyQualifiedTypeName name="com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand"/>
+<fullyQualifiedTypeName name="org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard"/>
+<fullyQualifiedTypeName name="org.springframework.cloud.netflix.hystrix.EnableHystrix"/>
+<fullyQualifiedTypeName name="com.netflix.discovery.converters.Auto"/>
+<fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
+<fullyQualifiedTypeName name="org.springframework.cloud.netflix.eureka.EnableEurekaClient"/>
+<fullyQualifiedTypeName name="org.springframework.cloud.netflix.zuul.EnableZuulServer"/>
+<fullyQualifiedTypeName name="org.springframework.cloud.netflix.zuul.EnableZuulProxy"/>
+<fullyQualifiedTypeName name="org.springframework.cloud.client.loadbalancer.LoadBalanced"/>
+<fullyQualifiedTypeName name="org.springframework.cloud.client.loadbalancer.LoadBalancerClient"/>
+<fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonAnySetter"/>
+<fullyQualifiedTypeName name="org.springframework.scheduling.annotation.Async"/>
+<fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="org.springframework.scheduling.annotation.AsyncResult"/>
+<fullyQualifiedTypeName name="org.apache.log4j.spi.LoggerFactory"/>
+<fullyQualifiedTypeName name="com.example.Reserve"/>
+<fullyQualifiedTypeName name="java.util.concurrent.Callable"/>
+<fullyQualifiedTypeName name="org.springframework.web.client.RestTemplate"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="java.util.concurrent.ExecutorService"/>
+<fullyQualifiedTypeName name="java.util.concurrent.Executors"/>
+<fullyQualifiedTypeName name="java.util.concurrent.Future"/>
+<fullyQualifiedTypeName name="java.util.concurrent.TimeUnit"/>
+<fullyQualifiedTypeName name="org.slf4j.Logger"/>
+<fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
+<fullyQualifiedTypeName name="com.example.threads.ParallelCalls"/>
+</qualifiedTypeNameHistroy>

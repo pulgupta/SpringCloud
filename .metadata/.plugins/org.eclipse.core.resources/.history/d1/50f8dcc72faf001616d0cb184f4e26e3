@@ -1,0 +1,33 @@
+package com.example;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.TimeUnit;
+
+import javax.servlet.ServletContextEvent;
+import javax.servlet.ServletContextListener;
+
+public class GracefulShutdown implements ServletContextListener{
+
+	ExecutorService executorService;
+	
+	public ExecutorService getExecutorService() {
+		return executorService;
+	}
+
+	public void setExecutorService(ExecutorService executorService) {
+		this.executorService = executorService;
+	}
+
+	@Override
+	public void contextDestroyed(ServletContextEvent arg0) {
+		executorService.shutdownNow();
+		executorService.awaitTermination(10, TimeUnit.SECONDS)();
+	}
+
+	@Override
+	public void contextInitialized(ServletContextEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
