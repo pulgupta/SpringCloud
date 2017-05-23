@@ -31,6 +31,7 @@ The projects have samples implemented for the below patterns
 #### 5. Proxy Server
 #### 6. Hystrix Dashboard
 
+
 **Centralized Configuration** or config server as it is known help us to keep all our confguration at a central place. All our systems and services will use this server to read the configurations.
 
 **Service Registry** is used to register a service as it comes up.
@@ -44,7 +45,7 @@ The projects have samples implemented for the below patterns
 **Hystrix Dashboard** helps us in monitoring the health of services and other important metrices.
     
 ## Missing features
-  There are lots more patterns which can improve our cloud offerings.
+  There are lot more patterns which can improve our cloud offerings.
   I will be adding more patterns and feature to the project like security, encryptions etc.
   
 ## License
